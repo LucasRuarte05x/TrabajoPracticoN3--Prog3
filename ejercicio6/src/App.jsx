@@ -6,8 +6,28 @@ function App() {
   const [imc, setImc] = useState(null);
   const [mensaje, setMensaje] = useState('');
   const [color, setColor] = useState('');
+  
+  return (
+    <div style={{ textAlign: 'center', marginTop: '100px' }}>
+      <h2>Calculadora de IMC</h2>
 
-    return <div></div>;
-}
+      <input
+        type="number"
+        placeholder="Peso (kg)"
+        value={peso}
+        onChange={(e) => setPeso(e.target.value)}
+      />
+      <br /><br />
+
+      <input
+        type="number"
+        placeholder="Altura (m)"
+        value={altura}
+        onChange={(e) => setAltura(e.target.value)}
+      />
+  
+        </div>
+      )}
+
 
 export default App;
