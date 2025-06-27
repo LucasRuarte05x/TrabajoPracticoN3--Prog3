@@ -55,9 +55,18 @@ function App() {
         value={altura}
         onChange={(e) => setAltura(e.target.value)}
       />
-  
+
+      <button onClick={calcularIMC}>Calcular IMC</button>
+      <br /><br />
+
+      {imc && (
+        <div style={{ color: color, fontWeight: 'bold' }}>
+          Tu IMC es {imc} - {mensaje}
         </div>
       )}
+    </div>
+  );
+}
 
 
 export default App;
