@@ -18,6 +18,8 @@ function App() {
       res = a - b;
     } else if (operacion === "multiplicacion") {
       res = a * b;
+    } else if (operacion === "division"){
+      res = b !== 0 ? a / b : "Error: division por cero";
     } else {
       res = "Operación inválida";
     }
