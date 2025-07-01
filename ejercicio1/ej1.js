@@ -4,13 +4,16 @@ const operacion = document.getElementById('operacion');
 const calcularBtn = document.getElementById('calcular');
 const resultado = document.getElementById('resultado');
 
-operacion.addEventListener('change', function () {
-  if (operacion.value === 'dividir') {
+function verificarDivisionPorCero() {
+  const op = operacion.value;
+  const n2 = parseFloat(num2.value);
+
+  if (op === "division" && n2 === 0) {
     calcularBtn.disabled = true;
   } else {
     calcularBtn.disabled = false;
   }
-});
+}
 
 calcularBtn.addEventListener('click', function () {
   const valor1 = parseFloat(numero1.value);
