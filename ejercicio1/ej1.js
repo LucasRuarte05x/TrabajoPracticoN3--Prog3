@@ -6,7 +6,7 @@ const resultado = document.getElementById('resultado');
 
 function verificarDivisionPorCero() {
   const op = operacion.value;
-  const n2 = parseFloat(num2.value);
+  const n2 = parseFloat(numero2.value);
 
   if (op === "division" && n2 === 0) {
     calcularBtn.disabled = true;
@@ -16,26 +16,22 @@ function verificarDivisionPorCero() {
 }
 
 operacion.addEventListener("change", verificarDivisionPorCero);
-num2.addEventListener("input", verificarDivisionPorCero);
+numero2.addEventListener("input", verificarDivisionPorCero);
 
-calcularBtn.addEventListener('click', function () {
-  const valor1 = parseFloat(numero1.value);
-  const valor2 = parseFloat(numero2.value);
-  let res = '';
+calcularBtn.addEventListener("click", () => {
+  const n1 = parseFloat(numero1.value);
+  const n2 = parseFloat(numero2.value);
+  let res = 0;
 
-  switch (operacion.value) {
-    case 'sumar':
-      res = valor1 + valor2;
-      break;
-    case 'restar':
-      res = valor1 - valor2;
-      break;
-    case 'multiplicar':
-      res = valor1 * valor2;
-      break;
-    default:
-      res = 'Operación no válida';
+  if (operacion.value === "suma") {
+    res = n1 + n2;
+  } else if (operacion.value === "resta") {
+    res = n1 - n2;
+  } else if (operacion.value === "multiplicacion") {
+    res = n1 * n2;
+  } else if (operacion.value === "division") {
+    res = n1 / n2;
   }
 
-  resultado.textContent = res;
+  resultado.textContent = "Resultado: " + res;
 });
